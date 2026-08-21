@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>PhotoDelete</title>
+
   <meta
     name="description"
     content="Clean your camera roll by swiping. Delete photos faster and free up storage."
@@ -15,37 +16,78 @@
       box-sizing: border-box;
     }
 
+    html,
     body {
       margin: 0;
-      min-height: 100dvh;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
       background:
-        radial-gradient(circle at 50% 10%, #19181d 0%, #0d0d0f 38%, #080809 100%);
-      color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        radial-gradient(
+          circle at 50% 20%,
+          #19181d 0%,
+          #0d0d0f 42%,
+          #080809 100%
+        );
+
+      color: #ffffff;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
     }
 
     .page {
       width: 100%;
       max-width: 430px;
+
+      min-height: 100vh;
       min-height: 100dvh;
+
       margin: 0 auto;
-      padding: 58px 18px 28px;
+      padding: 30px 18px 22px;
 
       display: flex;
       flex-direction: column;
+    }
+
+    /*
+      Der komplette Hauptinhalt wird innerhalb
+      des verfügbaren Screens vertikal zentriert.
+    */
+    .hero {
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
       text-align: center;
+
+      /*
+        minimal nach oben korrigiert, damit der Footer
+        optisch nicht die Zentrierung verschiebt.
+      */
+      padding-bottom: 25px;
     }
 
     .logo {
       width: 96px;
       height: 96px;
-      margin: 0 auto 20px;
+
+      margin: 0 auto 18px;
+
       border-radius: 50%;
       object-fit: cover;
     }
 
     h1 {
       margin: 0 0 8px;
+
       font-size: 25px;
       line-height: 1.15;
       font-weight: 700;
@@ -53,103 +95,232 @@
 
     .description {
       margin: 0;
+
       font-size: 15px;
       line-height: 1.45;
       font-weight: 500;
     }
 
-    .hint {
+    .download-hint {
       display: block;
       margin-top: 2px;
+
       font-weight: 600;
     }
 
     .download {
+      position: relative;
+
       display: flex;
       align-items: center;
       justify-content: center;
 
       width: 100%;
       min-height: 64px;
-      margin-top: 28px;
-      padding: 0 24px;
 
-      color: #fff;
-      background: #000;
-      border: 1px solid #29292d;
+      margin-top: 28px;
+      padding: 0 65px;
+
+      color: #ffffff;
+      background: #000000;
+
+      border: 1px solid #2d2d31;
       border-radius: 13px;
 
       font-size: 16px;
       font-weight: 600;
+
       text-decoration: none;
 
-      transition: transform 0.12s ease, opacity 0.12s ease;
+      transition:
+        transform 0.12s ease,
+        opacity 0.12s ease;
     }
 
     .download:active {
       transform: scale(0.985);
-      opacity: 0.85;
+      opacity: 0.86;
+    }
+
+    /*
+      Apple-artiges Icon links im Button.
+      Komplett lokal – kein FontAwesome o. Ä.
+    */
+    .apple-icon {
+      position: absolute;
+      left: 22px;
+
+      width: 31px;
+      height: 36px;
+    }
+
+    .apple-body {
+      position: absolute;
+      left: 4px;
+      bottom: 0;
+
+      width: 24px;
+      height: 28px;
+
+      background: #ffffff;
+
+      border-radius:
+        48% 48% 52% 52%
+        / 42% 42% 58% 58%;
+
+      transform: rotate(-2deg);
+    }
+
+    /* leichte Einschnürung oben */
+    .apple-body::before {
+      content: "";
+
+      position: absolute;
+      top: -3px;
+      left: 9px;
+
+      width: 9px;
+      height: 7px;
+
+      background: #000000;
+
+      border-radius: 50%;
+    }
+
+    /* angebissene Stelle rechts */
+    .apple-body::after {
+      content: "";
+
+      position: absolute;
+      top: 5px;
+      right: -5px;
+
+      width: 10px;
+      height: 11px;
+
+      background: #000000;
+
+      border-radius: 50%;
+    }
+
+    .apple-leaf {
+      position: absolute;
+      top: 0;
+      left: 16px;
+
+      width: 11px;
+      height: 6px;
+
+      background: #ffffff;
+
+      border-radius: 100% 0 100% 0;
+
+      transform: rotate(-28deg);
+      transform-origin: bottom left;
     }
 
     footer {
-      margin-top: auto;
-      padding-top: 70px;
+      flex-shrink: 0;
+
+      padding: 16px 0 2px;
+
+      text-align: center;
+
       font-size: 12px;
+      line-height: 1.4;
     }
 
     footer a {
-      color: #888;
+      color: #858589;
       text-decoration: none;
     }
 
     footer a:hover {
-      color: #bbb;
+      color: #b4b4b8;
     }
 
     .separator {
-      margin: 0 8px;
-      color: #555;
+      margin: 0 10px;
+      color: #55555a;
     }
 
+
+    /*
+      Etwas mehr Platz auf größeren Screens.
+    */
     @media (min-width: 600px) {
       .page {
-        padding-top: 80px;
+        padding-left: 24px;
+        padding-right: 24px;
       }
     }
   </style>
 </head>
 
+
 <body>
+
   <main class="page">
 
-    <img
-      src="./logo.png"
-      alt="PhotoDelete"
-      class="logo"
-    >
+    <section class="hero">
 
-    <h1>PhotoDelete</h1>
+      <!-- Deine logo.png liegt im gleichen Ordner -->
+      <img
+        src="./logo.png"
+        alt="PhotoDelete"
+        class="logo"
+      >
 
-    <p class="description">
-      Clean your camera roll by swiping.<br>
-      Delete photos faster &amp; free up storage.
-      <span class="hint">Download on the iPhone App Store ↓</span>
-    </p>
 
-    <a
-      class="download"
-      href="https://apps.apple.com/app/id6762371378"
-      aria-label="Download PhotoDelete on the App Store"
-    >
-      Download PhotoDelete
-    </a>
+      <h1>PhotoDelete</h1>
+
+
+      <p class="description">
+        Clean your camera roll by swiping.<br>
+        Delete photos faster &amp; free up storage.
+
+        <span class="download-hint">
+          Download on the iPhone App Store ↓
+        </span>
+      </p>
+
+
+      <a
+        class="download"
+        href="https://apps.apple.com/app/id6762371378"
+        aria-label="Download PhotoDelete on the iPhone App Store"
+      >
+
+        <span class="apple-icon" aria-hidden="true">
+          <span class="apple-body"></span>
+          <span class="apple-leaf"></span>
+        </span>
+
+        <span>
+          Download PhotoDelete
+        </span>
+
+      </a>
+
+    </section>
+
 
     <footer>
-      <a href="./impressum.html">Impressum</a>
+
+      <a href="./impressum.html">
+        Impressum
+      </a>
+
       <span class="separator">·</span>
-      <a href="./privacy.html">Privacy Policy</a>
+
+      <!-- WEBSITE Privacy Policy, NICHT App Privacy -->
+      <a href="./website-privacy.html">
+        Privacy Policy
+      </a>
+
     </footer>
 
   </main>
+
 </body>
 </html>
