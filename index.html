@@ -26,7 +26,7 @@
     body {
       background:
         radial-gradient(
-          circle at 50% 18%,
+          circle at 50% 17%,
           #1b1920 0%,
           #111014 34%,
           #09090b 68%,
@@ -53,17 +53,13 @@
       min-height: 100dvh;
 
       margin: 0 auto;
-      padding: 24px 18px 18px;
+      padding: 22px 17px 20px;
 
       display: flex;
       flex-direction: column;
     }
 
-    /*
-      Hauptbereich:
-      grundsätzlich vertikal zentriert,
-      anschließend etwas nach oben verschoben.
-    */
+    /* Hauptinhalt */
     .hero {
       flex: 1;
 
@@ -73,7 +69,8 @@
 
       text-align: center;
 
-      transform: translateY(-38px);
+      /* Etwas oberhalb der exakten Bildschirmmitte */
+      transform: translateY(-58px);
     }
 
     .logo {
@@ -82,40 +79,39 @@
       width: 96px;
       height: 96px;
 
-      margin: 0 auto 19px;
+      margin: 0 auto 20px;
 
       border-radius: 50%;
       object-fit: cover;
     }
 
     h1 {
-      margin: 0 0 8px;
+      margin: 0 0 9px;
 
       font-size: 25px;
       line-height: 1.15;
       font-weight: 700;
 
-      letter-spacing: -0.4px;
+      letter-spacing: -0.35px;
     }
 
     .description {
       margin: 0;
 
       font-size: 15px;
-      line-height: 1.4;
+      line-height: 1.42;
       font-weight: 500;
     }
 
     .download-hint {
       display: block;
+
       margin-top: 2px;
 
       font-weight: 600;
     }
 
-    /*
-      Hauptbutton
-    */
+    /* Download-Button */
     .download {
       position: relative;
 
@@ -124,20 +120,21 @@
       justify-content: center;
 
       width: 100%;
-      min-height: 64px;
+      min-height: 66px;
 
-      margin-top: 28px;
+      margin-top: 29px;
       padding: 0 68px;
 
       color: #ffffff;
-      background: #111114;
 
-      border: 1px solid #45454b;
+      background: #131316;
+
+      border: 1px solid #55555c;
       border-radius: 13px;
 
       box-shadow:
-        0 7px 24px rgba(0, 0, 0, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+        0 9px 28px rgba(0, 0, 0, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045);
 
       font-size: 16px;
       line-height: 1;
@@ -152,79 +149,68 @@
     }
 
     .download:hover {
-      background: #17171a;
-      border-color: #55555b;
+      background: #19191d;
+      border-color: #68686f;
     }
 
     .download:active {
       transform: scale(0.985);
-      background: #1a1a1d;
+      background: #1b1b1f;
     }
 
-    /*
-      Apple-Systemzeichen.
-      Wird auf iPhone / Mac nativ und sauber dargestellt.
-    */
-    .apple-icon {
+    /* Neutrales Download-Symbol */
+    .download-icon {
       position: absolute;
 
-      left: 21px;
+      left: 24px;
       top: 50%;
 
       transform: translateY(-52%);
 
-      width: 34px;
+      width: 29px;
+      height: 29px;
 
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       color: #ffffff;
 
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
-
-      font-size: 34px;
+      font-size: 28px;
       line-height: 1;
-
       font-weight: 400;
     }
 
-    /*
-      Drei Punkte rechts wie bei Linktree.
-      Nur visuelles Element – kein Menü.
-    */
+    /* Drei Punkte rechts */
     .more {
       position: absolute;
 
       right: 20px;
       top: 50%;
 
-      transform: translateY(-52%);
+      transform: translateY(-53%);
 
-      color: #97979d;
+      color: #9c9ca2;
 
-      font-size: 22px;
+      font-size: 21px;
       line-height: 1;
       font-weight: 700;
     }
 
-    /*
-      Legal Footer
-    */
+    /* Legal Footer */
     footer {
       flex-shrink: 0;
 
-      padding: 16px 0 4px;
+      padding: 18px 0 5px;
 
       text-align: center;
 
-      font-size: 13px;
+      font-size: 14px;
       line-height: 1.4;
     }
 
     footer a {
-      color: #a0a0a6;
+      color: #b0b0b6;
       text-decoration: none;
 
       transition: color 0.12s ease;
@@ -237,33 +223,33 @@
     }
 
     .separator {
-      margin: 0 9px;
-      color: #5f5f64;
+      margin: 0 10px;
+
+      color: #69696f;
     }
 
-    /*
-      Kleine Smartphones:
-      alles minimal kompakter halten.
-    */
-    @media (max-height: 650px) {
+    /* Kleinere Displays */
+    @media (max-height: 680px) {
       .hero {
-        transform: translateY(-20px);
+        transform: translateY(-32px);
       }
 
       .logo {
-        width: 82px;
-        height: 82px;
-        margin-bottom: 15px;
+        width: 84px;
+        height: 84px;
+        margin-bottom: 16px;
       }
 
       .download {
-        margin-top: 22px;
+        margin-top: 23px;
+      }
+
+      footer {
+        font-size: 13px;
       }
     }
 
-    /*
-      Desktop / größere Displays
-    */
+    /* Größere Displays */
     @media (min-width: 600px) {
       .page {
         padding-left: 24px;
@@ -293,20 +279,23 @@
         Delete photos faster &amp; free up storage.
 
         <span class="download-hint">
-          Download on the iPhone App Store ↓
+          Download on the App Store ↓
         </span>
       </p>
+
 
       <a
         class="download"
         href="https://apps.apple.com/app/id6762371378"
-        aria-label="Download PhotoDelete on the iPhone App Store"
+        aria-label="Download PhotoDelete on the App Store"
       >
 
         <span
-          class="apple-icon"
+          class="download-icon"
           aria-hidden="true"
-        ></span>
+        >
+          ↓
+        </span>
 
         <span>
           Download PhotoDelete
@@ -315,7 +304,9 @@
         <span
           class="more"
           aria-hidden="true"
-        >⋮</span>
+        >
+          ⋮
+        </span>
 
       </a>
 
