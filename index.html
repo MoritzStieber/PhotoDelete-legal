@@ -26,10 +26,11 @@
     body {
       background:
         radial-gradient(
-          circle at 50% 20%,
-          #19181d 0%,
-          #0d0d0f 42%,
-          #080809 100%
+          circle at 50% 18%,
+          #1b1920 0%,
+          #111014 34%,
+          #09090b 68%,
+          #060607 100%
         );
 
       color: #ffffff;
@@ -38,7 +39,10 @@
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
+        Arial,
         sans-serif;
+
+      -webkit-font-smoothing: antialiased;
     }
 
     .page {
@@ -49,15 +53,16 @@
       min-height: 100dvh;
 
       margin: 0 auto;
-      padding: 30px 18px 22px;
+      padding: 24px 18px 18px;
 
       display: flex;
       flex-direction: column;
     }
 
     /*
-      Der komplette Hauptinhalt wird innerhalb
-      des verfügbaren Screens vertikal zentriert.
+      Hauptbereich:
+      grundsätzlich vertikal zentriert,
+      anschließend etwas nach oben verschoben.
     */
     .hero {
       flex: 1;
@@ -68,18 +73,16 @@
 
       text-align: center;
 
-      /*
-        minimal nach oben korrigiert, damit der Footer
-        optisch nicht die Zentrierung verschiebt.
-      */
-      padding-bottom: 25px;
+      transform: translateY(-38px);
     }
 
     .logo {
+      display: block;
+
       width: 96px;
       height: 96px;
 
-      margin: 0 auto 18px;
+      margin: 0 auto 19px;
 
       border-radius: 50%;
       object-fit: cover;
@@ -91,13 +94,15 @@
       font-size: 25px;
       line-height: 1.15;
       font-weight: 700;
+
+      letter-spacing: -0.4px;
     }
 
     .description {
       margin: 0;
 
       font-size: 15px;
-      line-height: 1.45;
+      line-height: 1.4;
       font-weight: 500;
     }
 
@@ -108,6 +113,9 @@
       font-weight: 600;
     }
 
+    /*
+      Hauptbutton
+    */
     .download {
       position: relative;
 
@@ -119,134 +127,142 @@
       min-height: 64px;
 
       margin-top: 28px;
-      padding: 0 65px;
+      padding: 0 68px;
 
       color: #ffffff;
-      background: #000000;
+      background: #111114;
 
-      border: 1px solid #2d2d31;
+      border: 1px solid #45454b;
       border-radius: 13px;
 
+      box-shadow:
+        0 7px 24px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
       font-size: 16px;
+      line-height: 1;
       font-weight: 600;
 
       text-decoration: none;
 
       transition:
         transform 0.12s ease,
-        opacity 0.12s ease;
+        background 0.12s ease,
+        border-color 0.12s ease;
+    }
+
+    .download:hover {
+      background: #17171a;
+      border-color: #55555b;
     }
 
     .download:active {
       transform: scale(0.985);
-      opacity: 0.86;
+      background: #1a1a1d;
     }
 
     /*
-      Apple-artiges Icon links im Button.
-      Komplett lokal – kein FontAwesome o. Ä.
+      Apple-Systemzeichen.
+      Wird auf iPhone / Mac nativ und sauber dargestellt.
     */
     .apple-icon {
       position: absolute;
-      left: 22px;
 
-      width: 31px;
-      height: 36px;
-    }
+      left: 21px;
+      top: 50%;
 
-    .apple-body {
-      position: absolute;
-      left: 4px;
-      bottom: 0;
+      transform: translateY(-52%);
 
-      width: 24px;
-      height: 28px;
-
-      background: #ffffff;
-
-      border-radius:
-        48% 48% 52% 52%
-        / 42% 42% 58% 58%;
-
-      transform: rotate(-2deg);
-    }
-
-    /* leichte Einschnürung oben */
-    .apple-body::before {
-      content: "";
-
-      position: absolute;
-      top: -3px;
-      left: 9px;
-
-      width: 9px;
-      height: 7px;
-
-      background: #000000;
-
-      border-radius: 50%;
-    }
-
-    /* angebissene Stelle rechts */
-    .apple-body::after {
-      content: "";
-
-      position: absolute;
-      top: 5px;
-      right: -5px;
-
-      width: 10px;
-      height: 11px;
-
-      background: #000000;
-
-      border-radius: 50%;
-    }
-
-    .apple-leaf {
-      position: absolute;
-      top: 0;
-      left: 16px;
-
-      width: 11px;
-      height: 6px;
-
-      background: #ffffff;
-
-      border-radius: 100% 0 100% 0;
-
-      transform: rotate(-28deg);
-      transform-origin: bottom left;
-    }
-
-    footer {
-      flex-shrink: 0;
-
-      padding: 16px 0 2px;
+      width: 34px;
 
       text-align: center;
 
-      font-size: 12px;
+      color: #ffffff;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
+      font-size: 34px;
+      line-height: 1;
+
+      font-weight: 400;
+    }
+
+    /*
+      Drei Punkte rechts wie bei Linktree.
+      Nur visuelles Element – kein Menü.
+    */
+    .more {
+      position: absolute;
+
+      right: 20px;
+      top: 50%;
+
+      transform: translateY(-52%);
+
+      color: #97979d;
+
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    /*
+      Legal Footer
+    */
+    footer {
+      flex-shrink: 0;
+
+      padding: 16px 0 4px;
+
+      text-align: center;
+
+      font-size: 13px;
       line-height: 1.4;
     }
 
     footer a {
-      color: #858589;
+      color: #a0a0a6;
       text-decoration: none;
+
+      transition: color 0.12s ease;
     }
 
-    footer a:hover {
-      color: #b4b4b8;
+    footer a:hover,
+    footer a:focus {
+      color: #ffffff;
+      text-decoration: underline;
     }
 
     .separator {
-      margin: 0 10px;
-      color: #55555a;
+      margin: 0 9px;
+      color: #5f5f64;
     }
 
+    /*
+      Kleine Smartphones:
+      alles minimal kompakter halten.
+    */
+    @media (max-height: 650px) {
+      .hero {
+        transform: translateY(-20px);
+      }
+
+      .logo {
+        width: 82px;
+        height: 82px;
+        margin-bottom: 15px;
+      }
+
+      .download {
+        margin-top: 22px;
+      }
+    }
 
     /*
-      Etwas mehr Platz auf größeren Screens.
+      Desktop / größere Displays
     */
     @media (min-width: 600px) {
       .page {
@@ -264,16 +280,13 @@
 
     <section class="hero">
 
-      <!-- Deine logo.png liegt im gleichen Ordner -->
       <img
         src="./logo.png"
         alt="PhotoDelete"
         class="logo"
       >
 
-
       <h1>PhotoDelete</h1>
-
 
       <p class="description">
         Clean your camera roll by swiping.<br>
@@ -284,21 +297,25 @@
         </span>
       </p>
 
-
       <a
         class="download"
         href="https://apps.apple.com/app/id6762371378"
         aria-label="Download PhotoDelete on the iPhone App Store"
       >
 
-        <span class="apple-icon" aria-hidden="true">
-          <span class="apple-body"></span>
-          <span class="apple-leaf"></span>
-        </span>
+        <span
+          class="apple-icon"
+          aria-hidden="true"
+        ></span>
 
         <span>
           Download PhotoDelete
         </span>
+
+        <span
+          class="more"
+          aria-hidden="true"
+        >⋮</span>
 
       </a>
 
@@ -313,7 +330,6 @@
 
       <span class="separator">·</span>
 
-      <!-- WEBSITE Privacy Policy, NICHT App Privacy -->
       <a href="./website-privacy.html">
         Privacy Policy
       </a>
