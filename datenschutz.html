@@ -112,6 +112,7 @@
     <li>Art. 6 Abs. 1 lit. b DSGVO, soweit die Verarbeitung erforderlich ist, um die Kernfunktionen der App bereitzustellen.</li>
     <li>Art. 6 Abs. 1 lit. a DSGVO, soweit du eine iOS-Berechtigung freiwillig erteilst, z. B. Zugriff auf deine Fotomediathek.</li>
     <li>Art. 6 Abs. 1 lit. f DSGVO, soweit wir ein berechtigtes Interesse an sicherer Bereitstellung, Support und Missbrauchsvermeidung haben.</li>
+    <li>Art. 6 Abs. 1 lit. f DSGVO, soweit wir ein berechtigtes Interesse an einer datenschutzfreundlichen Erfolgsmessung eigener Werbekampagnen über Apples SKAdNetwork und AdAttributionKit haben, siehe § 11.</li>
   </ul>
 
   <h2>§ 5 Fotozugriff und iOS-Berechtigungen</h2>
@@ -153,10 +154,16 @@
   <h2>§ 10 App-Bewertungen</h2>
   <p>PhotoDelete kann den systemeigenen Bewertungsdialog von Apple anzeigen. Wenn du eine Bewertung abgibst, wird diese direkt von Apple verarbeitet. Wir erhalten keinen Zugriff auf nicht öffentlich sichtbare Bewertungsdaten.</p>
 
-  <h2>§ 11 Keine Werbung, kein Tracking, keine allgemeine Nutzungsanalyse</h2>
-  <p>PhotoDelete enthält nach aktuellem Stand keine Werbe-SDKs, kein Tracking zu Werbezwecken und keine allgemeine Drittanbieter-Nutzungsanalyse zur Auswertung deiner Nutzung von Fotos, Videos oder App-Funktionen. Es werden keine Nutzungsprofile für Werbung erstellt. Ein App-Tracking-Transparency-Dialog ist daher nach aktuellem Stand nicht erforderlich.</p>
+  <h2>§ 11 Keine Werbung in der App, kein Tracking, keine allgemeine Nutzungsanalyse</h2>
+  <p>PhotoDelete enthält keine Werbe-SDKs, keine Werbe- oder Analyse-SDKs Dritter wie Meta oder TikTok, kein Tracking zu Werbezwecken und keine allgemeine Drittanbieter-Nutzungsanalyse zur Auswertung deiner Nutzung von Fotos, Videos oder App-Funktionen. Es werden keine Nutzungsprofile für Werbung erstellt und es findet kein appübergreifendes Tracking statt. Ein App-Tracking-Transparency-Dialog ist daher nicht erforderlich.</p>
+
+  <h3>Datenschutzfreundliche Messung eigener Werbung</h3>
+  <p>Zur Messung des Erfolgs eigener Werbekampagnen nutzt PhotoDelete Apples datenschutzfreundliche Zuordnung über SKAdNetwork und AdAttributionKit. Die App meldet dabei ausschließlich eine einzelne anonyme Zahl, den sogenannten Conversion Value, an das Betriebssystem. Diese Zahl gibt an, dass die App gestartet wurde, und gegebenenfalls, welche Kaufart abgeschlossen wurde, also Wochen-, Monats-, Jahresabo oder Einmalkauf.</p>
+  <p>Apple bewahrt diesen Wert auf deinem Gerät auf. Nur wenn sich eine Installation einer Werbeanzeige zuordnen lässt, erzeugt Apple daraus eine zusammengefasste und zeitversetzte Rückmeldung und sendet sie an das an der Kampagne beteiligte Werbenetzwerk. Apple verzögert diese Rückmeldung und unterdrückt einzelne Angaben, sofern bestimmte Schwellenwerte nicht erreicht werden, damit keine Rückschlüsse auf einzelne Personen möglich sind.</p>
+  <p>Die Rückmeldung enthält keine Werbe-ID (IDFA), keine Nutzer- oder Gerätekennung, keine RevenueCat-Kennung, keine personenbezogenen Daten und keine Informationen über deine Fotos oder Videos. Die App selbst sendet nichts an Werbenetzwerke, und wir erhalten keine Informationen über einzelne Nutzer. Das beteiligte Werbenetzwerk erhält ausschließlich Apples zusammengefasste Rückmeldung. Da keine Daten auf Ebene einer einzelnen Person oder eines einzelnen Geräts mit Daten Dritter verknüpft werden, handelt es sich nicht um Tracking im Sinne von Apples App Tracking Transparency, und es ist keine Einwilligungsabfrage erforderlich. Weitere Informationen zu diesem Rahmenwerk: <a href="https://developer.apple.com/documentation/storekit/skadnetwork" target="_blank" rel="noopener">https://developer.apple.com/documentation/storekit/skadnetwork</a></p>
+
   <p>Kaufbezogene Daten können über RevenueCat wie in § 8 beschrieben verarbeitet werden, einschließlich zur Kaufvalidierung, Verwaltung von Berechtigungen, Betrugsprävention, Kaufwiederherstellung sowie für kaufbezogene Dashboard- bzw. Analysefunktionen.</p>
-  <p>Sollten künftig allgemeine Analyse-, Crash-Reporting-, Werbe- oder Tracking-Dienste eingebunden werden, wird diese Datenschutzerklärung vorab entsprechend aktualisiert.</p>
+  <p>Sollten künftig zusätzliche Analyse-, Werbe- oder Tracking-Dienste eingebunden werden, wird diese Datenschutzerklärung entsprechend aktualisiert.</p>
 
   <h2>§ 12 Drittanbieter und Empfänger</h2>
   <p>Personenbezogene Daten können, soweit erforderlich, durch folgende Anbieter verarbeitet werden:</p>
@@ -166,10 +173,11 @@
     <li>GitHub, Inc. für das Hosting dieser Datenschutz-Webseite</li>
     <li>E-Mail-Dienstleister, einschließlich Google/Gmail, soweit du uns per E-Mail kontaktierst</li>
   </ul>
+  <p>Schalten wir Werbekampagnen, kann das jeweils beteiligte Werbenetzwerk eine von Apple erzeugte, zusammengefasste und zeitversetzte Rückmeldung zur Kampagnenmessung erhalten, siehe § 11. Diese Rückmeldung stammt von Apple und nicht von uns und enthält keine personenbezogenen Daten.</p>
   <p>Eine Weitergabe oder ein Verkauf deiner Fotos und Videos an Dritte findet nicht statt.</p>
 
   <h2>§ 13 Übermittlung in Drittländer</h2>
-  <p>Im Rahmen der Nutzung von Apple, RevenueCat, GitHub und E-Mail-Dienstleistern kann eine Verarbeitung personenbezogener Daten in Ländern außerhalb der Europäischen Union bzw. des Europäischen Wirtschaftsraums stattfinden, insbesondere in den USA.</p>
+  <p>Im Rahmen der Nutzung von Apple, RevenueCat, GitHub und E-Mail-Dienstleistern kann eine Verarbeitung personenbezogener Daten in Ländern außerhalb der Europäischen Union bzw. des Europäischen Wirtschaftsraums stattfinden, insbesondere in den USA. Dasselbe kann für Werbenetzwerke gelten, die von Apple eine zusammengefasste Rückmeldung zur Kampagnenmessung erhalten; diese Rückmeldung enthält allerdings keine personenbezogenen Daten.</p>
   <p>Soweit erforderlich, erfolgt eine solche Übermittlung auf Grundlage geeigneter Garantien im Sinne der Art. 44 ff. DSGVO, insbesondere Angemessenheitsbeschlüssen der Europäischen Kommission, dem EU-US Data Privacy Framework oder Standardvertragsklauseln.</p>
 
   <h2>§ 14 Bereitstellung dieser Webseite über GitHub Pages</h2>
@@ -212,7 +220,7 @@
 
   <h2>§ 20 Änderungen dieser Datenschutzerklärung</h2>
   <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich die App, eingebundene Dienste oder rechtliche Anforderungen ändern. Die jeweils aktuelle Version ist unter dieser URL abrufbar.</p>
-  <p><strong>Stand / zuletzt geändert:</strong> 9. Juni 2026</p>
+  <p><strong>Stand / zuletzt geändert:</strong> 21. September 2026</p>
 
   <hr style="margin-top:48px; border:none; border-top:1px solid var(--border);">
   <p style="margin-top:16px;"><a href="impressum.html">Impressum</a></p>
