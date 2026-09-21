@@ -110,6 +110,7 @@
     <li>Art. 6(1)(b) GDPR, where processing is necessary to provide the core functionality of the app.</li>
     <li>Art. 6(1)(a) GDPR, where you voluntarily grant an iOS permission, such as access to your photo library.</li>
     <li>Art. 6(1)(f) GDPR, where we have a legitimate interest in secure operation, support, and abuse prevention.</li>
+    <li>Art. 6(1)(f) GDPR, where we have a legitimate interest in the privacy-preserving measurement of the effectiveness of our own advertising campaigns through Apple’s SKAdNetwork and AdAttributionKit, see § 11.</li>
   </ul>
 
   <h2>§ 5 Photo Access and iOS Permissions</h2>
@@ -152,13 +153,15 @@
   <p>PhotoDelete may display Apple’s native app rating prompt. If you submit a rating, it is processed directly by Apple. We do not receive access to non-public rating data.</p>
 
   <h2>§ 11 No Advertising in the App, No Tracking, No General Usage Analytics</h2>
-  <p>PhotoDelete contains no advertising SDKs, no advertising or analytics SDKs of third parties such as Meta or TikTok, no tracking for advertising purposes, and no general third-party usage analytics for analyzing how you use photos, videos, or app features. No usage profiles are created for advertising. An App Tracking Transparency prompt is therefore not required.</p>
+  <p>PhotoDelete contains no advertising SDKs, no advertising or analytics SDKs of third parties such as Meta or TikTok, no tracking for advertising purposes, and no general third-party usage analytics for analyzing how you use photos, videos, or app features. No usage profiles are created for advertising and no cross-app tracking takes place. An App Tracking Transparency prompt is therefore not required.</p>
+
   <h3>Privacy-Preserving Measurement of Our Own Advertising</h3>
-  <p>To measure the effectiveness of our own advertising campaigns, PhotoDelete uses Apple's privacy-preserving attribution frameworks SKAdNetwork and AdAttributionKit. The app reports nothing more than a single anonymous number, a so-called conversion value, to the operating system. It indicates that the app was started and, where applicable, which subscription category was purchased.</p>
-  <p>Apple keeps this value on your device. Only if an installation can be attributed to an advertisement does Apple generate an aggregated and time-delayed report and send it to the advertising network concerned. This report contains no advertising identifier (IDFA), no user or device identifier, no personal data, and no information about your photos or videos. The app itself sends no data to advertising networks, and we receive no information about individual users. Because no data is linked with third-party data at the level of an individual user or device, this is not tracking within the meaning of Apple's App Tracking Transparency framework and no consent prompt is required. Further information on this framework: <a href="https://developer.apple.com/documentation/storekit/skadnetwork" target="_blank" rel="noopener">https://developer.apple.com/documentation/storekit/skadnetwork</a></p>
+  <p>To measure the effectiveness of our own advertising campaigns, PhotoDelete uses Apple’s privacy-preserving attribution frameworks SKAdNetwork and AdAttributionKit. The app reports nothing more than a single anonymous number, a so-called conversion value, to the operating system. This number indicates that the app was started and, where applicable, which type of purchase was completed, that is a weekly, monthly, or yearly subscription or a one-time purchase.</p>
+  <p>Apple keeps this value on your device. Only if an installation can be attributed to an advertisement does Apple generate an aggregated and time-delayed report and send it to the advertising network involved in the campaign. Apple delays this report and suppresses individual details if certain thresholds are not met, so that no conclusions about individual persons are possible.</p>
+  <p>The report contains no advertising identifier (IDFA), no user or device identifier, no RevenueCat identifier, no personal data, and no information about your photos or videos. The app itself sends no data to advertising networks, and we receive no information about individual users. The advertising network involved receives Apple’s aggregated report only. Because no data is linked with third-party data at the level of an individual person or device, this is not tracking within the meaning of Apple’s App Tracking Transparency framework and no consent prompt is required. Further information on this framework: <a href="https://developer.apple.com/documentation/storekit/skadnetwork" target="_blank" rel="noopener">https://developer.apple.com/documentation/storekit/skadnetwork</a></p>
 
   <p>Purchase-related data may be processed through RevenueCat as described in § 8, including for purchase validation, entitlement management, fraud prevention, purchase restoration, and purchase-related dashboard or analytics functions.</p>
-  <p>If general analytics, crash reporting, advertising SDKs, or tracking services are added in the future, this Privacy Policy will be updated accordingly.</p>
+  <p>If additional analytics, advertising, or tracking services are added in the future, this Privacy Policy will be updated accordingly.</p>
 
   <h2>§ 12 Third-Party Providers and Recipients</h2>
   <p>Personal data may be processed by the following providers where necessary:</p>
@@ -168,10 +171,11 @@
     <li>GitHub, Inc. for hosting this privacy policy website</li>
     <li>email service providers, including Google/Gmail, where you contact us by email</li>
   </ul>
+  <p>If we run advertising campaigns, the advertising network involved may receive an aggregated and time-delayed report generated by Apple for campaign measurement, see § 11. This report originates from Apple and not from us and contains no personal data.</p>
   <p>Your photos and videos are not shared with or sold to third parties.</p>
 
   <h2>§ 13 International Data Transfers</h2>
-  <p>In connection with the use of Apple, RevenueCat, GitHub, and email service providers, personal data may be processed in countries outside the European Union or the European Economic Area, in particular in the United States.</p>
+  <p>In connection with the use of Apple, RevenueCat, GitHub, and email service providers, personal data may be processed in countries outside the European Union or the European Economic Area, in particular in the United States. The same may apply to advertising networks that receive an aggregated report from Apple for campaign measurement; however, that report contains no personal data.</p>
   <p>Where required, such transfers take place on the basis of appropriate safeguards within the meaning of Art. 44 et seq. GDPR, in particular adequacy decisions of the European Commission, the EU-US Data Privacy Framework, or standard contractual clauses.</p>
 
   <h2>§ 14 Hosting of This Website via GitHub Pages</h2>
@@ -215,9 +219,9 @@
 
   <h2>§ 20 Changes to This Privacy Policy</h2>
   <p>We reserve the right to update this Privacy Policy if the app, integrated services, or legal requirements change. The current version is available at this URL.</p>
-  <p><strong>Last updated:</strong> June 9, 2026</p>
+  <p><strong>Last updated:</strong> September 21, 2026</p>
 
-    <hr style="margin-top:48px; border:none; border-top:1px solid var(--border);">
+  <hr style="margin-top:48px; border:none; border-top:1px solid var(--border);">
   <p style="margin-top:16px;"><a href="impressum.html">Impressum</a></p>
 
 </main>
