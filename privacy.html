@@ -151,10 +151,14 @@
   <h2>§ 10 App Ratings</h2>
   <p>PhotoDelete may display Apple’s native app rating prompt. If you submit a rating, it is processed directly by Apple. We do not receive access to non-public rating data.</p>
 
-  <h2>§ 11 No Advertising, No Tracking, No General Usage Analytics</h2>
-  <p>PhotoDelete currently contains no advertising SDKs, no tracking for advertising purposes, and no general third-party usage analytics for analyzing how you use photos, videos, or app features. No usage profiles are created for advertising. Based on the current implementation, an App Tracking Transparency prompt is therefore not required.</p>
+  <h2>§ 11 No Advertising in the App, No Tracking, No General Usage Analytics</h2>
+  <p>PhotoDelete contains no advertising SDKs, no advertising or analytics SDKs of third parties such as Meta or TikTok, no tracking for advertising purposes, and no general third-party usage analytics for analyzing how you use photos, videos, or app features. No usage profiles are created for advertising. An App Tracking Transparency prompt is therefore not required.</p>
+  <h3>Privacy-Preserving Measurement of Our Own Advertising</h3>
+  <p>To measure the effectiveness of our own advertising campaigns, PhotoDelete uses Apple's privacy-preserving attribution frameworks SKAdNetwork and AdAttributionKit. The app reports nothing more than a single anonymous number, a so-called conversion value, to the operating system. It indicates that the app was started and, where applicable, which subscription category was purchased.</p>
+  <p>Apple keeps this value on your device. Only if an installation can be attributed to an advertisement does Apple generate an aggregated and time-delayed report and send it to the advertising network concerned. This report contains no advertising identifier (IDFA), no user or device identifier, no personal data, and no information about your photos or videos. The app itself sends no data to advertising networks, and we receive no information about individual users. Because no data is linked with third-party data at the level of an individual user or device, this is not tracking within the meaning of Apple's App Tracking Transparency framework and no consent prompt is required. Further information on this framework: <a href="https://developer.apple.com/documentation/storekit/skadnetwork" target="_blank" rel="noopener">https://developer.apple.com/documentation/storekit/skadnetwork</a></p>
+
   <p>Purchase-related data may be processed through RevenueCat as described in § 8, including for purchase validation, entitlement management, fraud prevention, purchase restoration, and purchase-related dashboard or analytics functions.</p>
-  <p>If general analytics, crash reporting, advertising, or tracking services are added in the future, this Privacy Policy will be updated accordingly in advance.</p>
+  <p>If general analytics, crash reporting, advertising SDKs, or tracking services are added in the future, this Privacy Policy will be updated accordingly.</p>
 
   <h2>§ 12 Third-Party Providers and Recipients</h2>
   <p>Personal data may be processed by the following providers where necessary:</p>
